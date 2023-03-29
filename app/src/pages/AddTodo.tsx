@@ -48,7 +48,8 @@ const AddTodo = () => {
 
             <div className='t-body'>
                 <label>Body</label>
-                <input type='text' value={body} onChange={(e)=> setBody(e.target.value)} placeholder='body'/>
+                <textarea  value={body} onChange={(e)=> setBody(e.target.value)} placeholder='body'></textarea>
+                
             </div>
 
             <div>
