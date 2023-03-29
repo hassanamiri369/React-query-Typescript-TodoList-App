@@ -36,22 +36,31 @@ const TodoList = () => {
             <Helmet>
                 <title>Todo List</title>
             </Helmet>
-            {data?.data.map((item) => (
-
-                <div className='content' key={item.id}>
-                   <p>{item.title}</p>
-                    <p>{item.title}</p>
-                    <pre>{item.body}</pre><br />
-                    <div>{item.complete}</div>
-                    <div>
-                        <Link key={item.id} to={`/todoDetail/${item.id}`}> more </Link>
-                        <span title='edit' className='edit-ico'><CiEdit onClick={() => navigate(`/editTodo/${item.id}`)} /></span>
-                        <span className='delete-ico'><FiDelete onClick={() => handleDelete(Number(item.id))} /></span>
-                    </div>
-                  
+            <section>
+                <div className='links-container'>
+                    <Link to={'/addTodo'}>NEW TODO</Link>
                 </div>
+            </section>
 
-            ))}
+
+            <section>
+                {data?.data.map((item) => (
+
+                    <div className='content' key={item.id}>
+                        <p>{item.title}</p>
+                        <p>{item.title}</p>
+                        <pre>{item.body}</pre><br />
+                        <div>{item.complete}</div>
+                        <div>
+                            <Link key={item.id} to={`/todoDetail/${item.id}`}> more </Link>
+                            <span title='edit' className='edit-ico'><CiEdit onClick={() => navigate(`/editTodo/${item.id}`)} /></span>
+                            <span className='delete-ico'><FiDelete onClick={() => handleDelete(Number(item.id))} /></span>
+                        </div>
+
+                    </div>
+
+                ))}
+            </section>
         </div>
     )
 }
