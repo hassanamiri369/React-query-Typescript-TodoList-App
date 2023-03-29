@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import TodoList from './pages/TodoList';
+import { ToastContainer, toast } from 'react-toastify';
 
+import 'react-toastify/dist/ReactToastify.css';
 import { Routes, Route , Link } from "react-router-dom";
 
 // pages
@@ -30,6 +32,7 @@ function App() {
 
         <section>
           <div className='routes-container'>
+            <ToastContainer autoClose={2000} />
             <Routes>
               <Route path='/' element={<TodoList />} />
               <Route path='/todoDetail/:id' element={<TodoDetail/>}/>
