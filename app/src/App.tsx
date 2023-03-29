@@ -23,11 +23,7 @@ function App() {
       </header>
 
       <main>
-        <section>
-          <div className='links-container'>
-            <Link to={'/addTodo'}>NEW TODO</Link>
-          </div>
-        </section>
+        
 
 
         <section>
