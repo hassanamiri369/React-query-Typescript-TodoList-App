@@ -4,10 +4,12 @@ import { deleteTodo, getTodos } from '../api';
 
 import { FiDelete } from 'react-icons/fi';
 import { CiEdit } from 'react-icons/ci';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 const TodoList = () => {
 
+    const navigate = useNavigate()
     const queryClient = useQueryClient();
 
     const {data  , isLoading } = useQuery(['todos'] , getTodos  )
@@ -27,15 +29,18 @@ const TodoList = () => {
   return (
     <div className='todolist-container'>
        {data?.data.map((item)=>(
-        <div key={item.id}>
+       
+         <div className='content' key={item.id}>
             <p>{item.title}</p>
-            <p>{item.body}</p>
+            <pre>{item.body}</pre>
             <div>{item.complete ? <p>done</p> : <p>un done</p>}</div>
             <div>
-                <span className='edit-ico'><CiEdit /></span>
+            <Link key={item.id} to={`/todoDetail/${item.id}`}> more </Link>
+                <span className='edit-ico'><CiEdit onClick={()=> navigate('/editTodo')} /></span>
                 <span className='delete-ico'><FiDelete onClick={()=> handleDelete(Number(item.id))}/></span>
             </div>
         </div>
+     
        ))}
     </div>
   )
