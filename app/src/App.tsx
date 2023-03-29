@@ -34,7 +34,7 @@ function App() {
               <Route path='/' element={<TodoList />} />
               <Route path='/todoDetail/:id' element={<TodoDetail/>}/>
               <Route path='/addTodo' element={<AddTodo />} />
-              <Route path='/editTodo' element={<EditPage/>}/>
+              <Route path='/editTodo/:id' element={<EditPage/>}/>
             </Routes>
           </div>
         </section>
