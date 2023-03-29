@@ -8,7 +8,7 @@ export interface ITodo  {
     id : number;
     title : string;
     body : string;
-    complete : boolean
+    complete : string
 
 }
 
@@ -32,4 +32,9 @@ export const addTodos = async(todo : ITodo)=>{
 export const deleteTodo = async(id : number) =>{
     const response = await api.delete(`/todos/${id}`)
     return response;
+}
+
+export const updateTodo = async (upTodo : ITodo)=>{
+    const response = await api.put(`/todos/${upTodo.id}` , upTodo)
+    return response
 }
