@@ -36,7 +36,7 @@ const TodoList = () => {
             <div>{item.complete ? <p>done</p> : <p>un done</p>}</div>
             <div>
             <Link key={item.id} to={`/todoDetail/${item.id}`}> more </Link>
-                <span className='edit-ico'><CiEdit onClick={()=> navigate('/editTodo')} /></span>
+                <span className='edit-ico'><CiEdit onClick={()=> navigate(`/editTodo/${item.id}`)} /></span>
                 <span className='delete-ico'><FiDelete onClick={()=> handleDelete(Number(item.id))}/></span>
             </div>
         </div>
