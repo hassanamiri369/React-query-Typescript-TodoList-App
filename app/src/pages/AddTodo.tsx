@@ -3,7 +3,8 @@ import { addTodos } from '../api';
 import {useMutation ,useQueryClient } from "@tanstack/react-query";
 import {useNavigate} from "react-router-dom";
 
-
+import { toast } from 'react-toastify';
+import { Helmet } from 'react-helmet';
 
 const AddTodo = () => {
 
@@ -20,6 +21,7 @@ const AddTodo = () => {
             queryClient.invalidateQueries(['todos'])
             console.log("suucess adding")
             console.log(data)
+            toast.success("success add new todo" , {position : 'top-right'})
         }
     })
     
@@ -29,7 +31,7 @@ const AddTodo = () => {
         if(!title) return alert("title must be complete !!!")
         if(!body) return alert("body must be complete !!! ")
 
-        const newTodo = {id : Number(new Date()) , title , body , complete : false}
+        const newTodo = {id : Number(new Date()) , title , body , complete : "unDone"}
         mutate(newTodo)
         setTitle("")
         setBody("")
@@ -40,6 +42,9 @@ const AddTodo = () => {
 
   return (
     <div>
+        <Helmet>
+            <title>Add Todo </title>
+        </Helmet>
         <form onSubmit={(e)=> handleSubmit(e)}>
             <div className='t-title'>
                 <label>Title</label>
