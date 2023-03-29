@@ -18,7 +18,7 @@ export const getTodos  = async ()   =>{
 }
 
 
-// export const addTodos = async(todo : ITodo)=>{
-//     const response = await api.post('/todos' , todo)
-//     return response
-// }
+export const addTodos = async(todo : ITodo)=>{
+    const response = await api.post('/todos' , todo)
+    return response
+}
