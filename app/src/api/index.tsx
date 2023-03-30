@@ -12,8 +12,8 @@ export interface ITodo  {
 
 }
 
-export const getTodos  = async ()   =>{
-    const response = await api.get <ITodo[]>("/todos");
+export const getTodos  = async (page : number)   =>{
+    const response = await api.get <ITodo[]>(`/todos?_limit=2&_page=${page}`);
     return response;
 }
 
