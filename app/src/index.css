@@ -1,29 +1,3 @@
-/* :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-  
-} */
-
-/* a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-} */
-
 
  body{
   width: 100%;
@@ -40,7 +14,118 @@ a:hover {
 
 
 .App{
-  background-color: lightgreen;
+
   width: 100%;
 
+}
+
+
+header{
+  /* background-color: indianred; */
+  display: flex;
+  justify-content: center;
+}
+
+/* todo list page ===> home page */
+
+.head{
+  display: flex;
+  width: 100%;
+  height: 3rem;
+}
+
+
+.links-container{
+  display: flex;
+  flex: 1;
+  /* background-color: blueviolet; */
+  align-items: center;
+  justify-content: center;
+}
+
+.links-container > a{
+
+  padding: 5px 15px;
+  text-decoration: none;
+  background-color: blue;
+  color: white;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgb(92, 209, 248);
+  transition: all 0.2s ease;
+}
+.links-container > a:hover{
+background-color: darkblue;
+}
+.search-container{
+  display: flex;
+  font-size: flex;
+  flex: 1;
+  background-color: blue;
+  /* align-items: center; */
+  border: 1px solid gray;
+  
+
+}
+
+.search-container span{
+  background-color:white;
+  font-size: 25px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  cursor: pointer;
+  
+}
+
+.search-container input{
+  width: 100%;
+  padding: 10px;
+  outline: none;
+  border: none;
+
+}
+
+
+.pagination-container{
+  height: 4rem;
+  display: flex;
+  align-items: center;
+
+}
+
+.page-content{
+  /* background-color: red; */
+  margin-left: 60px;
+  width: 100%;
+ 
+  
+}
+
+.page-content button{
+  height: 1.8rem;
+  width: 50px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+
+
+.content{
+ border: 1px solid black;
+ padding: 20px;
+ margin: 10px;
+}
+
+
+.edit-ico{
+  font-size: 28px;
+  background-color: gainsboro;
+  padding: 10px;
+}
+
+.delete-ico{
+  font-size: 24px;
+  padding: 10px;
+  background-color: lightcoral;
 }
