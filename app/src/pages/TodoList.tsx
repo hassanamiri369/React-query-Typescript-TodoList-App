@@ -4,12 +4,12 @@ import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { ITodo, deleteTodo, getTodos } from '../api';
 
 import { FiDelete } from 'react-icons/fi';
-import { CiEdit } from 'react-icons/ci';
+import { CiEdit, CiSearch } from 'react-icons/ci';
 import { Link, useNavigate } from 'react-router-dom';
 
 import { toast } from 'react-toastify';
 import { Helmet } from 'react-helmet';
-
+import { AiOutlineClose } from 'react-icons/ai';
 
 const TodoList = () => {
 
@@ -44,13 +44,7 @@ const TodoList = () => {
 
     
 
-    const [searchText , setSearchText] = useState("")
-    const [resultSearch , setResultSearch] = useState<ITodo[] | null>(null)
-
-    const handlerSearch = () =>{}
-
-
-
+    
 
 
     return (
@@ -58,20 +52,20 @@ const TodoList = () => {
             <Helmet>
                 <title>Todo List</title>
             </Helmet>
-            <section>
+            <section className='head'>
                 <div className='links-container'>
                     <Link to={'/addTodo'}>NEW TODO</Link>
                 </div>
 
-                <div>
-                    <input type='text' />
-                </div>
+               
             </section>
 
-            <section>
-                <button disabled={page === 1} onClick={PrevHandler}>prev</button>
+            <section className='pagination-container'>
+               <div className='page-content'>
+               <button disabled={page === 1} onClick={PrevHandler}>prev</button>
                 {page}
                 <button disabled={page === data?.headers["x-total-count"] /2} onClick={NextHandler}>next</button>
+               </div>
             </section>
 
 
