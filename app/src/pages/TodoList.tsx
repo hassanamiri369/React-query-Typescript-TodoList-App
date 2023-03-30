@@ -1,7 +1,7 @@
-import React from 'react'
+import React , {useState} from 'react'
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 
-import { deleteTodo, getTodos } from '../api';
+import { ITodo, deleteTodo, getTodos } from '../api';
 
 import { FiDelete } from 'react-icons/fi';
 import { CiEdit } from 'react-icons/ci';
@@ -13,16 +13,27 @@ import { Helmet } from 'react-helmet';
 
 const TodoList = () => {
 
+    const [page , setPage] = useState(1)
+
+        const NextHandler = ()=> {
+            setPage(prev => prev + 1)
+        }
+
+        const PrevHandler = ()=> {
+            setPage(prev => prev - 1)
+        }
+
     const navigate = useNavigate()
     const queryClient = useQueryClient();
 
-    const { data, isLoading } = useQuery(['todos'], getTodos)
+    const { data, isLoading } = useQuery(['todos' , page], ()=>getTodos(page))
 
     const { mutate } = useMutation(deleteTodo, {
         onSuccess: () => {
             queryClient.invalidateQueries(['todos'])
             console.log("delte todo success")
             toast.error("delete todo success !!", { position: "top-center" })
+           
         }
     })
 
@@ -30,6 +41,17 @@ const TodoList = () => {
     const handleDelete = (id: number) => {
         mutate(id)
     }
+
+    
+
+    const [searchText , setSearchText] = useState("")
+    const [resultSearch , setResultSearch] = useState<ITodo[] | null>(null)
+
+    const handlerSearch = () =>{}
+
+
+
+
 
     return (
         <div className='todolist-container'>
@@ -40,6 +62,16 @@ const TodoList = () => {
                 <div className='links-container'>
                     <Link to={'/addTodo'}>NEW TODO</Link>
                 </div>
+
+                <div>
+                    <input type='text' />
+                </div>
+            </section>
+
+            <section>
+                <button disabled={page === 1} onClick={PrevHandler}>prev</button>
+                {page}
+                <button disabled={page === data?.headers["x-total-count"] /2} onClick={NextHandler}>next</button>
             </section>
 
 
