@@ -63,22 +63,23 @@ const TodoList = () => {
             <section className='pagination-container'>
                <div className='page-content'>
                <button disabled={page === 1} onClick={PrevHandler}>prev</button>
-                {page}
+                <span>page</span>{"  "}<span style={{fontWeight : "bold"}}>{page}</span>
                 <button disabled={page === data?.headers["x-total-count"] /2} onClick={NextHandler}>next</button>
                </div>
             </section>
 
 
-            <section>
+            <section className='show-item'>
                 {data?.data.map((item) => (
 
                     <div className='content' key={item.id}>
-                        <p>{item.title}</p>
-                        <p>{item.title}</p>
-                        <pre>{item.body}</pre><br />
+                        <p className='c-title'>{item.title}</p>
                         <div>{item.complete}</div>
                         <div>
-                            <Link key={item.id} to={`/todoDetail/${item.id}`}> more </Link>
+                        <Link key={item.id} to={`/todoDetail/${item.id}`}> More Detail </Link>
+                        </div>
+                        <div>
+                           
                             <span title='edit' className='edit-ico'><CiEdit onClick={() => navigate(`/editTodo/${item.id}`)} /></span>
                             <span className='delete-ico'><FiDelete onClick={() => handleDelete(Number(item.id))} /></span>
                         </div>
