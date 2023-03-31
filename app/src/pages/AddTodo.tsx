@@ -14,6 +14,7 @@ const AddTodo = () => {
     // state 
     const [title , setTitle] = useState("")
     const [body , setBody ] = useState("")
+    
 
     //  post new todo
     const {data , mutate} = useMutation(addTodos , {
@@ -41,25 +42,27 @@ const AddTodo = () => {
     }
 
   return (
-    <div>
+    <div className='addTodo-container'>
         <Helmet>
             <title>Add Todo </title>
         </Helmet>
         <form onSubmit={(e)=> handleSubmit(e)}>
-            <div className='t-title'>
+            <div className='d-title'>
                 <label>Title</label>
                 <input type='text' value={title} onChange={(e)=> setTitle(e.target.value)} placeholder='title'/>
             </div>
 
-            <div className='t-body'>
+            <div className='d-body'>
                 <label>Body</label>
-                <textarea  value={body} onChange={(e)=> setBody(e.target.value)} placeholder='body'></textarea>
+                <textarea  rows={15} value={body} onChange={(e)=> setBody(e.target.value)} placeholder='Explaine todo'></textarea>
                 
             </div>
 
-            <div>
+            <div className='d-button'>
                 <button>Create Todo</button>
+                <button onClick={()=> navigate("/")} className='cancel'>Cancel</button>
             </div>
+            
         </form>
     </div>
   )
