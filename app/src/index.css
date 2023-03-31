@@ -86,12 +86,26 @@ background-color: darkblue;
 
 
 .pagination-container{
-  height: 4rem;
+  height: 6rem;
   display: flex;
   align-items: center;
+  /* background-color: lightblue; */
+  margin-left: 20px;
+  margin-right: 40px;
 
 }
 
+.status{
+  /* background-color: red; */
+  font-size: 14px;
+  width: 200px;
+  line-height: 10px;
+}
+
+.status >p{
+  display: flex;
+  justify-content: space-between;
+}
 .page-content{
   margin-left: 60px;
   width: 100%;
@@ -128,7 +142,7 @@ background-color: darkblue;
 
 .content{
 
- border: 1px solid gray;
+ /* border: 1px solid gray; */
  padding: 20px;
  margin: 40px;
  border-radius: 4px;
@@ -434,4 +448,12 @@ padding: 8px;
 pre{
   font-family: 'JosefinSans-Italic-VariableFont_wght';
   margin-left: 20px;
+}
+
+.completeTodo{
+  background-color: lightgreen;
+}
+
+.proccessingTodo {
+  background-color: lightcoral;
 }
