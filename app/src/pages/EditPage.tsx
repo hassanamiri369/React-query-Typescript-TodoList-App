@@ -62,22 +62,23 @@ const EditPage = () => {
     }
   return (
     <>
-        <div>
+        <div className='editTodo-conatiner'>
             <Helmet>
                 <title>Edit Todo</title>
             </Helmet>
             <h1>edit page</h1>
             <Outlet/>
-            {id}
-            <form onSubmit={(e)=> handleSubmit(e)}>
-            <div className='t-title'>
+            
+            <form id='form-edit'  onSubmit={(e)=> handleSubmit(e)}>
+                <div>
+                <div className='t-title'>
                 <label>Title</label>
                 <input type='text' value={title} onChange={(e)=> setTitle(e.target.value)} placeholder='title'/>
             </div>
 
             <div className='t-body'>
                 <label>Body</label>
-                <textarea  value={body} onChange={(e)=> setBody(e.target.value)} placeholder='body'></textarea>
+                <textarea rows={15}  value={body} onChange={(e)=> setBody(e.target.value)} placeholder='body'></textarea>
                 
             </div>
 
@@ -90,11 +91,12 @@ const EditPage = () => {
                 </select>
             </div>
 
-            <div>
+            <div className='t-button'>
                 <button type='submit'>update Todo</button>
-                <button onClick={cancelUpdate}>cancel</button>
+                <button className='cancel' onClick={cancelUpdate}>cancel</button>
             </div>
-        </form>
+                </div>
+            </form>
         </div>
         
     </>

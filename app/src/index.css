@@ -252,3 +252,133 @@ line-height: 40px;
 .d-button button:hover{
   background-color: rgb(143, 229, 229);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* edit todo page */
+
+
+
+/* add todo page */
+.editTodo-container{
+  /* background-color:lightgoldenrodyellow; */
+  width: 100%;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.editTodo-conatiner h1{
+  text-align: center;
+  
+}
+ #form-edit{
+  /* background-color: lightcoral; */
+  width: 100%;
+  height: 110vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* line-height: 60px; */
+  
+}
+
+#form-edit >div{
+  /* background-color: blue; */
+  width: 80%;
+  min-height: 70vh;
+}
+.t-title{
+  /* background-color: blue; */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+    line-height: 45px;
+}
+
+.t-title input{
+  padding: 15px;
+  border: none;
+  border-bottom: 1px solid gray;
+   border-radius: 4px;
+}
+
+.t-body{
+  display: flex;
+  flex-direction: column;
+   margin-bottom: 20px;
+   line-height: 45px;
+
+}
+
+.t-body textarea{
+  border: none;
+  border-bottom: 1px solid gray;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+::placeholder{
+  font-size: 18px;
+  opacity: 0.5;
+  font-family: 'Josefin';
+}
+
+*{
+  outline: none;
+}
+
+
+.t-complete{
+  height: 4rem;
+  margin-top: 20px;
+  display: flex;
+  margin-bottom: 40px;
+  flex-direction: column;
+}
+
+.t-complete select{
+padding: 8px;
+
+}
+
+.t-complete option{
+  padding: 8px;
+}
+.t-button{
+  width: 100%;
+  line-height: 40px;
+}
+
+.t-button button{
+  width: 100%;
+  padding: 10px;
+  border: none;
+   border-radius: 4px;
+   background-color: rgb(87, 197, 14);
+   cursor: pointer;
+}
+
+.t-button .cancel{
+  background-color: lightcoral;
+}
+
+.t-button .cancel:hover{
+  background-color: rgb(235, 169, 169);
+}
+.t-button button:hover{
+  background-color: rgb(143, 229, 229);
+}
