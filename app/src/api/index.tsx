@@ -9,8 +9,13 @@ export interface ITodo  {
     title : string;
     body : string;
     complete : string
-
 }
+
+export const getAllTodos  = async ()   =>{
+    const response = await api.get <ITodo[]>(`/todos`);
+    return response;
+}
+
 
 export const getTodos  = async (page : number)   =>{
     const response = await api.get <ITodo[]>(`/todos?_limit=2&_page=${page}`);
