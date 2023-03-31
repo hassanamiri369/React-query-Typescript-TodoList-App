@@ -24,16 +24,26 @@ const TodoDetail = () => {
       <title>Todo Detail Info</title>
     </Helmet>
         <Outlet/>
-        <div>{id}</div>
-        <div>
+        
+        <div className='detail-container'>
           {isLoading ? <div>loading ...</div> : null}
-          <div>
+          <div className='goback'>
             <button onClick={()=> navigate("/")}>go back home</button>
           </div>
-          {data?.data && <div>
-            <p>{data.data.complete}</p>
-              <p>{data.data.title}</p>
-              <pre>{data.data.body}</pre>
+          {data?.data && <div className='detail-item'>
+          <p >ID :{" "}{id}</p>
+            <p>
+              <span>COMPLETE : </span>
+              <span>{data.data.complete}</span>
+            </p>
+              <p>
+                <span>TITLE :</span>
+                <span>{data.data.title}</span>
+              </p>
+              <p>
+                <span>BODY :</span>
+                <pre >{data.data.body}</pre>
+              </p>
 
             </div>}
         </div>

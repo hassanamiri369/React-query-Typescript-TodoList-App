@@ -382,3 +382,56 @@ padding: 8px;
 .t-button button:hover{
   background-color: rgb(143, 229, 229);
 }
+
+
+
+/* todo detail page */
+
+
+.detail-container{
+  /* background-color: blue; */
+  margin: 50px;
+  min-height: 60vh;
+  padding: 10px;
+}
+
+.goback{
+  width: 100%;
+  /* background-color: red; */
+
+}
+
+.goback button{
+  width: 200px;
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  background-color: rgb(122, 6, 204);
+  color: white;
+}
+
+.goback button:hover{
+  
+  background-color: rgb(77, 7, 128);
+}
+.detail-item >p{
+  display: flex;
+  flex-direction: column;
+  line-height: 40px;
+  /* border-bottom: 1px solid gainsboro; */
+}
+.detail-item >p span:first-child{
+  background-color: rgb(243, 241, 241);
+  border-radius: 6px;
+  padding-left: 10px;
+  font-weight: bold;
+ 
+}
+.detail-item >p span:last-child{
+  margin-left: 35px;
+}
+pre{
+  font-family: 'JosefinSans-Italic-VariableFont_wght';
+  margin-left: 20px;
+}
